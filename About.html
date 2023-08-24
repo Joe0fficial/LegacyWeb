@@ -22,13 +22,14 @@
             display: flex; /* Use flexbox for better alignment */
             align-items: center; /* Vertically center the items */
             padding: 10px;
+            user-select: none;
         }
 
         .navbar-title {
             color: #fff;
             font-size: 24px;
-            margin-right: auto; /* Push other items to the right */
-            user-select: none; /* Prevent text selection */
+            margin-right: auto;
+            user-select: none;
         }
 
         .navbar a {
@@ -47,13 +48,58 @@
         .navbar a.active {
             background-color: #555;
             font-weight: bold;
+            user-select: none;
+        }
+
+        .label-container {
+            position: relative;
+            background-color: #f9f9f9;
+            border-left: 6px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            cursor: pointer;
+            overflow: hidden; /* Hide the overflowing sliding line */
+        }
+
+        /* Add a sliding animation line */
+        .sliding-line {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 5px;
+            background-color: #ccc;
+            transition: left 0.3s ease-out;
+        }
+
+        .label-bullet {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #007bff;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .label-text {
+        display: inline-block;
+        vertical-align: top;
+        color: #333;
+        font-size: 16px;
+        user-select: none;
+        }
+
+        /* Add a class to apply the sliding animation */
+        .label-container:hover .sliding-line {
+            left: 0;
         }
 
         /* Add any other styles you need for your website */
         .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 20px;
+        user-select: none;
         }
 
         h1 {
@@ -73,6 +119,7 @@
             font-weight: bold;
             font-size: 48px;
             color: #333; /* Optional: Set a specific color */
+            user-select: none;
         }
     </style>
 </head>
@@ -88,9 +135,31 @@
     </div>
 
     <div class="container">
-        <!-- Content for the About page can be added here -->
-        <h1 class="showcase-title">About Us</h1>
-        <p>This is the about page content. You can add more information here.</p>
+        <h1 class="showcase-title">About Me</h1>
+
+        <div class="label-container">
+            <div class="sliding-line"></div>
+            <div class="label-bullet"></div>
+            <div class="label-text">Owner of Legacy.cc script, the best Trident Survival V2 script on the market.</div>
+        </div>
+
+        <div class="label-container">
+            <div class="sliding-line"></div>
+            <div class="label-bullet"></div>
+            <div class="label-text">Passionate about Lua and HTML scripting, bringing ideas to life through code.</div>
+        </div>
+        
+        <div class="label-container">
+            <div class="sliding-line"></div>
+            <div class="label-bullet"></div>
+            <div class="label-text">Experienced Roblox scripter, creating immersive gameplay experiences.</div>
+        </div>
+        
+        <div class="label-container">
+            <div class="sliding-line"></div>
+            <div class="label-bullet"></div>
+            <div class="label-text">Dedicated developer focused on delivering high-quality solutions.</div>
+        </div>
     </div>
 </body>
 </html>
